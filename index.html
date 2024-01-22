@@ -11,23 +11,25 @@
 <body>
   <div class="container">
     <div class="form flex">
-      <div class="form-container">
-        <div class="form-group">
-          <label for="year">Year</label>
-          <input type="text" name="" id="year">
+      <form>
+        <div class="form-container">
+          <div class="form-group">
+            <label for="year">Year</label>
+            <input type="text" name="" id="year">
+          </div>
+          <div class="form-group">
+            <label for="month">Month</label>
+            <input type="text" name="" id="month">
+          </div>
+          <div class="form-group">
+            <label for="day">Day</label>
+            <input type="text" name="" id="day">
+          </div>
+          <!-- <div class="form-group">
+            <button class="btn" id="submit"><i class="bi bi-arrow-down-short"></i></button>
+          </div> -->
         </div>
-        <div class="form-group">
-          <label for="month">Month</label>
-          <input type="text" name="" id="month">
-        </div>
-        <div class="form-group">
-          <label for="day">Day</label>
-          <input type="text" name="" id="day">
-        </div>
-        <!-- <div class="form-group">
-          <button class="btn" id="submit"><i class="bi bi-arrow-down-short"></i></button>
-        </div> -->
-      </div>
+      </form>
     </div>
     <div class="flex align-center">
       <span class="hr"></span>
@@ -35,20 +37,20 @@
     </div>
     <div class="age-output">
       <div class="age year flex align-bottom">
-        <h1 class="year number">23</h1>
+        <h1 class="year number" id="ageYear">0</h1>
         <h1>years</h1>
       </div>
       <div class="age month flex align-bottom">
-        <h1 class="month number">4</h1>
+        <h1 class="month number" id="ageMonth">0</h1>
         <h1>months</h1>
       </div>
       <div class="age day flex align-bottom">
-        <h1 class="day number">26</h1>
+        <h1 class="day number" id="ageDay">0</h1>
         <h1>days</h1>
       </div>
     </div>
     
-
+    <h1 id="test"></h1>
   </div>
   <script src="script.js"></script>
 </body>
