@@ -109,10 +109,16 @@ label{
 
 @media (max-width:400px) {
     .container{
-        width: 60%;
+        width: 65%;
     }
     .btn{
         font-size: 30px;
         padding: 10px;
+    }
+    .form-group input{
+        width: 60px;
+    }
+    .age h1{
+        font-size: 36px;
     }
 }
