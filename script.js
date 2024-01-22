@@ -12,10 +12,21 @@ document.getElementById('submit').addEventListener('click', ()=>{
         return response.json();
         })
     .then(data =>{
-        console.log(data)
-        document.getElementById('ageYear').textContent = data.years
-        document.getElementById('ageMonth').textContent = data.month;
-        document.getElementById('ageDay').textContent = data.days
+        if(data.isBirthDayToday) {
+            const ageOutput = document.getElementById('ageOutput')
+            const ageContainer = document.getElementById('age-container')
+            const birthDayWish = document.createElement('h1')
+            birthDayWish.textContent = `Happy Birthday, you are ${data.years} years`
+            birthDayWish.classList.add('birthday')
+            console.log(birthDayWish) 
+            ageOutput.classList.add('not-display')
+            ageContainer.appendChild(birthDayWish)
+
+        } else{
+            document.getElementById('ageYear').textContent = data.years
+            document.getElementById('ageMonth').textContent = data.month;
+            document.getElementById('ageDay').textContent = data.days
+        }
     }).catch(err =>{
         console.log(err)
     })
