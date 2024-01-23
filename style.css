@@ -88,6 +88,9 @@ label{
 .birthday{
     color: var(--dark-color);
 }
+.birth-alert{
+    border: 1px var(--dark-color) solid;
+}
 .age, .birthday{
     font-family: var(--primary-font);
 }

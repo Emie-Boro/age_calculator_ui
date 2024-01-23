@@ -21,6 +21,7 @@ document.getElementById('submit').addEventListener('click', ()=>{
         }
         if(data.isBirthDayToday) {
             document.getElementById('ageOutput').classList.add('not-display')
+            document.querySelector('.container').classList.add('birth-alert')
             const birthDayOutput = document.getElementById('birthDayOutput')
             birthDayOutput.textContent = `Happy Birthday, ${data.years} years of age!`
             birthDayOutput.classList.add('birthday')
@@ -29,6 +30,7 @@ document.getElementById('submit').addEventListener('click', ()=>{
         }
         if(!data.isBirthDayToday){
             document.getElementById('ageOutput').classList.remove('not-display')
+            document.querySelector('.container').classList.remove('birth-alert')
             birthDayOutput.classList.add('not-display')
             document.getElementById('ageYear').textContent = data.years
             document.getElementById('ageMonth').textContent = data.month;
