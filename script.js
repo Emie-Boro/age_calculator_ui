@@ -12,21 +12,30 @@ document.getElementById('submit').addEventListener('click', ()=>{
         return response.json();
         })
     .then(data =>{
+        if(data.days == 1) {
+            const daySepll = document.getElementById('daySpellCheck')
+            daySepll.textContent = 'day'   
+        }else{
+            const daySepll = document.getElementById('daySpellCheck')
+            daySepll.textContent = 'days'
+        }
         if(data.isBirthDayToday) {
-            const ageOutput = document.getElementById('ageOutput')
-            const ageContainer = document.getElementById('age-container')
-            const birthDayWish = document.createElement('h1')
-            birthDayWish.textContent = `Happy Birthday, you are ${data.years} years`
-            birthDayWish.classList.add('birthday')
-            console.log(birthDayWish) 
-            ageOutput.classList.add('not-display')
-            ageContainer.appendChild(birthDayWish)
+            document.getElementById('ageOutput').classList.add('not-display')
+            const birthDayOutput = document.getElementById('birthDayOutput')
+            birthDayOutput.textContent = `Happy Birthday, ${data.years} years of age!`
+            birthDayOutput.classList.add('birthday')
+            birthDayOutput.classList.remove('not-display')
 
-        } else{
+        }
+        if(!data.isBirthDayToday){
+            document.getElementById('ageOutput').classList.remove('not-display')
+            birthDayOutput.classList.add('not-display')
             document.getElementById('ageYear').textContent = data.years
             document.getElementById('ageMonth').textContent = data.month;
             document.getElementById('ageDay').textContent = data.days
         }
+            
+        
     }).catch(err =>{
         console.log(err)
     })
